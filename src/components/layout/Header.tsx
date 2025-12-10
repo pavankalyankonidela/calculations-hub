@@ -4,11 +4,10 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Finance", href: "/category/finance" },
-  { name: "Health", href: "/category/health" },
-  { name: "Math", href: "/category/math" },
-  { name: "Conversion", href: "/category/conversion" },
+  { name: "Age Calculator", href: "/" },
+  { name: "Basic Calculator", href: "/calculator/basic" },
+  { name: "BMI Calculator", href: "/calculator/bmi" },
+  { name: "Percentage", href: "/calculator/percentage" },
 ];
 
 export function Header() {
