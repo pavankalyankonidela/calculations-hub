@@ -2,13 +2,17 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { differenceInYears, differenceInMonths, differenceInDays, format } from "date-fns";
+import { differenceInYears, differenceInMonths, differenceInDays, differenceInWeeks, differenceInHours, differenceInSeconds, format } from "date-fns";
 
 interface AgeResult {
   years: number;
   months: number;
+  weeks: number;
   days: number;
   totalDays: number;
+  totalWeeks: number;
+  totalHours: number;
+  totalSeconds: number;
   nextBirthday: string;
   daysUntilBirthday: number;
   targetDate?: string;
@@ -36,9 +40,18 @@ export function AgeCalculator() {
     
     const afterMonths = new Date(afterYears);
     afterMonths.setMonth(afterYears.getMonth() + months);
-    const days = differenceInDays(referenceDate, afterMonths);
+    
+    const weeks = differenceInWeeks(referenceDate, afterMonths);
+    
+    const afterWeeks = new Date(afterMonths);
+    afterWeeks.setDate(afterMonths.getDate() + weeks * 7);
+    const days = differenceInDays(referenceDate, afterWeeks);
 
+    // Total values
     const totalDays = differenceInDays(referenceDate, birth);
+    const totalWeeks = differenceInWeeks(referenceDate, birth);
+    const totalHours = differenceInHours(referenceDate, birth);
+    const totalSeconds = differenceInSeconds(referenceDate, birth);
 
     // Calculate next birthday from reference date
     const nextBirthday = new Date(birth);
@@ -51,8 +64,12 @@ export function AgeCalculator() {
     setResult({
       years,
       months,
+      weeks,
       days,
       totalDays,
+      totalWeeks,
+      totalHours,
+      totalSeconds,
       nextBirthday: format(nextBirthday, "MMMM d, yyyy"),
       daysUntilBirthday,
       targetDate: useTargetDate && targetDate ? format(new Date(targetDate), "MMMM d, yyyy") : undefined,
@@ -64,6 +81,8 @@ export function AgeCalculator() {
     setTargetDate("");
     setResult(null);
   };
+
+  const formatNumber = (num: number) => num.toLocaleString();
 
   return (
     <div className="bg-card rounded-2xl border border-border shadow-lg p-6 max-w-md mx-auto">
@@ -136,37 +155,59 @@ export function AgeCalculator() {
             <h3 className="text-sm font-medium text-muted-foreground mb-4 text-center">
               {result.targetDate ? "Age at that date" : "Your Age"}
             </h3>
-            <div className="grid grid-cols-3 gap-4 text-center">
+            <div className="grid grid-cols-4 gap-3 text-center">
               <div>
-                <div className="text-3xl font-bold text-foreground">{result.years}</div>
-                <div className="text-sm text-muted-foreground">Years</div>
+                <div className="text-2xl font-bold text-foreground">{result.years}</div>
+                <div className="text-xs text-muted-foreground">Years</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-foreground">{result.months}</div>
-                <div className="text-sm text-muted-foreground">Months</div>
+                <div className="text-2xl font-bold text-foreground">{result.months}</div>
+                <div className="text-xs text-muted-foreground">Months</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-foreground">{result.days}</div>
-                <div className="text-sm text-muted-foreground">Days</div>
+                <div className="text-2xl font-bold text-foreground">{result.weeks}</div>
+                <div className="text-xs text-muted-foreground">Weeks</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-foreground">{result.days}</div>
+                <div className="text-xs text-muted-foreground">Days</div>
               </div>
             </div>
           </div>
 
-          {/* Additional Info */}
+          {/* Total Stats */}
+          <div className="bg-secondary rounded-xl p-4">
+            <h3 className="text-sm font-medium text-muted-foreground mb-3 text-center">Total Time Lived</h3>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="bg-card rounded-lg p-3 text-center">
+                <div className="text-lg font-bold text-foreground">{formatNumber(result.totalDays)}</div>
+                <div className="text-xs text-muted-foreground">Days</div>
+              </div>
+              <div className="bg-card rounded-lg p-3 text-center">
+                <div className="text-lg font-bold text-foreground">{formatNumber(result.totalWeeks)}</div>
+                <div className="text-xs text-muted-foreground">Weeks</div>
+              </div>
+              <div className="bg-card rounded-lg p-3 text-center">
+                <div className="text-lg font-bold text-foreground">{formatNumber(result.totalHours)}</div>
+                <div className="text-xs text-muted-foreground">Hours</div>
+              </div>
+              <div className="bg-card rounded-lg p-3 text-center">
+                <div className="text-lg font-bold text-foreground">{formatNumber(result.totalSeconds)}</div>
+                <div className="text-xs text-muted-foreground">Seconds</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Birthday Info */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-secondary rounded-xl p-4 text-center">
-              <div className="text-2xl font-bold text-foreground">{result.totalDays.toLocaleString()}</div>
-              <div className="text-sm text-muted-foreground">Total Days</div>
-            </div>
-            <div className="bg-secondary rounded-xl p-4 text-center">
+            <div className="bg-accent/50 rounded-xl p-4 text-center">
               <div className="text-2xl font-bold text-primary">{result.daysUntilBirthday}</div>
-              <div className="text-sm text-muted-foreground">Days Until Birthday</div>
+              <div className="text-xs text-muted-foreground">Days Until Birthday</div>
             </div>
-          </div>
-
-          <div className="bg-accent/50 rounded-xl p-4 text-center">
-            <div className="text-sm text-muted-foreground">Next Birthday</div>
-            <div className="text-lg font-semibold text-foreground">{result.nextBirthday}</div>
+            <div className="bg-accent/50 rounded-xl p-4 text-center">
+              <div className="text-sm font-semibold text-foreground">{result.nextBirthday}</div>
+              <div className="text-xs text-muted-foreground">Next Birthday</div>
+            </div>
           </div>
         </div>
       )}
