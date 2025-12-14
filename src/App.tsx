@@ -9,6 +9,10 @@ import BasicCalculatorPage from "./pages/calculators/BasicCalculatorPage";
 import BMICalculatorPage from "./pages/calculators/BMICalculatorPage";
 import PercentageCalculatorPage from "./pages/calculators/PercentageCalculatorPage";
 import AgeCalculatorPage from "./pages/calculators/AgeCalculatorPage";
+import LoanEMICalculatorPage from "./pages/calculators/LoanEMICalculatorPage";
+import TipCalculatorPage from "./pages/calculators/TipCalculatorPage";
+import DiscountCalculatorPage from "./pages/calculators/DiscountCalculatorPage";
+import UnitConverterPage from "./pages/calculators/UnitConverterPage";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +28,10 @@ const App = () => (
           <Route path="/calculator/bmi" element={<BMICalculatorPage />} />
           <Route path="/calculator/percentage" element={<PercentageCalculatorPage />} />
           <Route path="/calculator/age" element={<AgeCalculatorPage />} />
+          <Route path="/calculator/loan-emi" element={<LoanEMICalculatorPage />} />
+          <Route path="/calculator/tip" element={<TipCalculatorPage />} />
+          <Route path="/calculator/discount" element={<DiscountCalculatorPage />} />
+          <Route path="/calculator/unit-converter" element={<UnitConverterPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

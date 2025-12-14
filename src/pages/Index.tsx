@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { AgeCalculator } from "@/components/calculators/AgeCalculator";
 import { Link } from "react-router-dom";
-import { Calculator, Heart, Percent, ArrowRight } from "lucide-react";
+import { Calculator, Heart, Percent, ArrowRight, DollarSign, Receipt, Tag, ArrowLeftRight } from "lucide-react";
 import { AdBannerTop, AdBannerInContent, AdBannerBottom } from "@/components/ads/AdBanner";
 
 const otherCalculators = [
@@ -22,6 +22,30 @@ const otherCalculators = [
     description: "Percentage calculations",
     icon: Percent,
     href: "/calculator/percentage",
+  },
+  {
+    name: "Loan EMI Calculator",
+    description: "Monthly loan payments",
+    icon: DollarSign,
+    href: "/calculator/loan-emi",
+  },
+  {
+    name: "Tip Calculator",
+    description: "Calculate tips & split bills",
+    icon: Receipt,
+    href: "/calculator/tip",
+  },
+  {
+    name: "Discount Calculator",
+    description: "Find final prices",
+    icon: Tag,
+    href: "/calculator/discount",
+  },
+  {
+    name: "Unit Converter",
+    description: "Length, weight, temperature",
+    icon: ArrowLeftRight,
+    href: "/calculator/unit-converter",
   },
 ];
 
@@ -72,13 +96,13 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {otherCalculators.map((calc, index) => (
               <Link
                 key={calc.name}
                 to={calc.href}
                 className="group bg-card rounded-xl p-6 border border-border card-hover animate-fade-in text-center"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{ animationDelay: `${index * 0.05}s` }}
               >
                 <div className="inline-flex p-4 rounded-xl bg-primary/10 text-primary mb-4">
                   <calc.icon className="h-6 w-6" />

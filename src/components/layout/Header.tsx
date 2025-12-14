@@ -5,9 +5,12 @@ import { useState } from "react";
 
 const navLinks = [
   { name: "Age Calculator", href: "/" },
-  { name: "Basic Calculator", href: "/calculator/basic" },
-  { name: "BMI Calculator", href: "/calculator/bmi" },
-  { name: "Percentage", href: "/calculator/percentage" },
+  { name: "Basic", href: "/calculator/basic" },
+  { name: "BMI", href: "/calculator/bmi" },
+  { name: "Loan EMI", href: "/calculator/loan-emi" },
+  { name: "Tip", href: "/calculator/tip" },
+  { name: "Discount", href: "/calculator/discount" },
+  { name: "Unit Converter", href: "/calculator/unit-converter" },
 ];
 
 export function Header() {
@@ -24,12 +27,12 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.href}
-              className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-accent"
+              className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-accent"
             >
               {link.name}
             </Link>
@@ -40,7 +43,7 @@ export function Header() {
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden"
+          className="lg:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -49,7 +52,7 @@ export function Header() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-border bg-card animate-fade-in">
+        <div className="lg:hidden border-t border-border bg-card animate-fade-in">
           <nav className="container py-4 flex flex-col gap-2">
             {navLinks.map((link) => (
               <Link
