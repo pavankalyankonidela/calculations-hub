@@ -7,6 +7,10 @@ const footerLinks = {
     { name: "Basic Calculator", href: "/calculator/basic" },
     { name: "BMI Calculator", href: "/calculator/bmi" },
     { name: "Percentage Calculator", href: "/calculator/percentage" },
+    { name: "Loan EMI Calculator", href: "/calculator/loan-emi" },
+    { name: "Tip Calculator", href: "/calculator/tip" },
+    { name: "Discount Calculator", href: "/calculator/discount" },
+    { name: "Unit Converter", href: "/calculator/unit-converter" },
   ],
   resources: [
     { name: "About Us", href: "/about" },
