@@ -3,6 +3,8 @@ import { ArrowLeft, Share2, Bookmark } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { AdBannerInContent, AdBannerSidebar } from "@/components/ads/AdBanner";
+import { CalculatorContent } from "./CalculatorContent";
+import { CalculatorContentData } from "@/data/calculatorContent";
 
 interface CalculatorLayoutProps {
   title: string;
@@ -10,6 +12,7 @@ interface CalculatorLayoutProps {
   category: string;
   categoryHref: string;
   children: React.ReactNode;
+  content?: CalculatorContentData;
 }
 
 export function CalculatorLayout({ 
@@ -17,7 +20,8 @@ export function CalculatorLayout({
   description, 
   category, 
   categoryHref,
-  children 
+  children,
+  content
 }: CalculatorLayoutProps) {
   const handleShare = async () => {
     try {
@@ -74,10 +78,15 @@ export function CalculatorLayout({
           {/* In-Content Ad */}
           <AdBannerInContent className="my-8" />
 
+          {/* Educational Content */}
+          {content && (
+            <CalculatorContent content={content} calculatorName={title} />
+          )}
+
           {/* Back Link */}
           <Link 
             to={categoryHref}
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mt-8"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to {category}
