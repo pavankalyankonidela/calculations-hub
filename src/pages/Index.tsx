@@ -1,51 +1,20 @@
 import { Layout } from "@/components/layout/Layout";
 import { AgeCalculator } from "@/components/calculators/AgeCalculator";
 import { Link } from "react-router-dom";
-import { Calculator, Heart, Percent, ArrowRight, DollarSign, Receipt, Tag, ArrowLeftRight } from "lucide-react";
+import { Calculator, Heart, Percent, ArrowRight, DollarSign, Receipt, Tag, ArrowLeftRight, TrendingUp, Landmark, Flame } from "lucide-react";
 
 const otherCalculators = [
-  {
-    name: "Basic Calculator",
-    description: "Arithmetic operations",
-    icon: Calculator,
-    href: "/calculator/basic",
-  },
-  {
-    name: "BMI Calculator",
-    description: "Body Mass Index",
-    icon: Heart,
-    href: "/calculator/bmi",
-  },
-  {
-    name: "Percentage Calculator",
-    description: "Percentage calculations",
-    icon: Percent,
-    href: "/calculator/percentage",
-  },
-  {
-    name: "Loan EMI Calculator",
-    description: "Monthly loan payments",
-    icon: DollarSign,
-    href: "/calculator/loan-emi",
-  },
-  {
-    name: "Tip Calculator",
-    description: "Calculate tips & split bills",
-    icon: Receipt,
-    href: "/calculator/tip",
-  },
-  {
-    name: "Discount Calculator",
-    description: "Find final prices",
-    icon: Tag,
-    href: "/calculator/discount",
-  },
-  {
-    name: "Unit Converter",
-    description: "Length, weight, temperature",
-    icon: ArrowLeftRight,
-    href: "/calculator/unit-converter",
-  },
+  { name: "BMI Calculator", description: "Body Mass Index", icon: Heart, href: "/calculator/bmi" },
+  { name: "Loan EMI Calculator", description: "Monthly loan payments", icon: DollarSign, href: "/calculator/loan-emi" },
+  { name: "SIP Calculator", description: "Investment returns", icon: TrendingUp, href: "/calculator/sip" },
+  { name: "GST Calculator", description: "Tax calculations", icon: Landmark, href: "/calculator/gst" },
+  { name: "Compound Interest", description: "Interest on interest", icon: TrendingUp, href: "/calculator/compound-interest" },
+  { name: "Calorie Calculator", description: "Daily calorie needs", icon: Flame, href: "/calculator/calorie" },
+  { name: "Percentage Calculator", description: "Percentage calculations", icon: Percent, href: "/calculator/percentage" },
+  { name: "Tip Calculator", description: "Calculate tips & split bills", icon: Receipt, href: "/calculator/tip" },
+  { name: "Discount Calculator", description: "Find final prices", icon: Tag, href: "/calculator/discount" },
+  { name: "Unit Converter", description: "Length, weight, temperature", icon: ArrowLeftRight, href: "/calculator/unit-converter" },
+  { name: "Basic Calculator", description: "Arithmetic operations", icon: Calculator, href: "/calculator/basic" },
 ];
 
 const Index = () => {

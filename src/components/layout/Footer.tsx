@@ -4,12 +4,12 @@ import { Calculator, Mail, Github, Twitter } from "lucide-react";
 const footerLinks = {
   calculators: [
     { name: "Age Calculator", href: "/" },
-    { name: "Basic Calculator", href: "/calculator/basic" },
     { name: "BMI Calculator", href: "/calculator/bmi" },
-    { name: "Percentage Calculator", href: "/calculator/percentage" },
     { name: "Loan EMI Calculator", href: "/calculator/loan-emi" },
-    { name: "Tip Calculator", href: "/calculator/tip" },
-    { name: "Discount Calculator", href: "/calculator/discount" },
+    { name: "SIP Calculator", href: "/calculator/sip" },
+    { name: "GST Calculator", href: "/calculator/gst" },
+    { name: "Compound Interest", href: "/calculator/compound-interest" },
+    { name: "Calorie Calculator", href: "/calculator/calorie" },
     { name: "Unit Converter", href: "/calculator/unit-converter" },
   ],
   resources: [

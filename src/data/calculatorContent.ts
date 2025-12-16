@@ -335,5 +335,170 @@ export const calculatorContent: Record<string, CalculatorContentData> = {
       "At -40°, Fahrenheit and Celsius are exactly equal: -40°F = -40°C.",
       "The speed of light is exactly 299,792,458 meters per second—this is now the definition of the meter, not the other way around."
     ]
+  },
+  sip: {
+    howToUse: [
+      "Enter the monthly investment amount you plan to invest in the SIP.",
+      "Input the expected annual rate of return (typically 10-15% for equity mutual funds).",
+      "Specify the investment period in years.",
+      "Click 'Calculate SIP' to see your projected returns.",
+      "Review the breakdown showing invested amount, estimated returns, and total value."
+    ],
+    about: "A Systematic Investment Plan (SIP) calculator helps you estimate the future value of your regular investments in mutual funds. SIP is a disciplined approach to investing where you invest a fixed amount at regular intervals (usually monthly), regardless of market conditions. This strategy leverages rupee cost averaging—buying more units when prices are low and fewer when prices are high—potentially reducing the average cost per unit over time. Our calculator uses the compound interest formula to project your investment growth, helping you plan for long-term financial goals like retirement, children's education, or buying a home.",
+    history: "The concept of systematic investing dates back to the early 20th century when investment clubs allowed middle-class workers to pool small amounts regularly. Mutual funds emerged in the US in 1924 with the Massachusetts Investors Trust. SIPs gained popularity in India after the economic liberalization of 1991 when mutual funds became accessible to retail investors. The term 'rupee cost averaging' (or dollar cost averaging in the US) was popularized by Benjamin Graham, the father of value investing, in his 1949 book 'The Intelligent Investor.' Today, SIPs are the most popular way for retail investors in India to participate in the stock market, with over 50 million active SIP accounts.",
+    formula: "SIP returns are calculated using the future value of an annuity formula: FV = P × [((1 + r)^n - 1) / r] × (1 + r), where: FV = Future Value (total corpus), P = Monthly investment amount, r = Monthly rate of return (annual rate ÷ 12 ÷ 100), n = Total number of installments (years × 12). The formula assumes reinvestment of returns and doesn't account for entry/exit loads or taxes. For example, investing ₹10,000 monthly for 10 years at 12% annual returns: n = 120, r = 0.01, FV = ₹23,23,391.",
+    faqs: [
+      {
+        question: "What is a good SIP return rate to assume?",
+        answer: "Historical data shows large-cap equity funds have delivered 10-12% returns, while mid-cap and small-cap funds have given 12-15% over 10+ year periods. For conservative estimates, use 10-12%. Remember, past performance doesn't guarantee future results."
+      },
+      {
+        question: "Can I change my SIP amount later?",
+        answer: "Yes, most mutual funds allow you to increase, decrease, pause, or stop your SIP anytime. Many investors use 'SIP step-up' to automatically increase their SIP amount annually, typically by 10%."
+      },
+      {
+        question: "What happens if I miss an SIP payment?",
+        answer: "Missing occasional payments doesn't significantly impact long-term returns. Most funds simply skip that month's investment. However, consistent investing is key to maximizing rupee cost averaging benefits."
+      },
+      {
+        question: "Is SIP better than lump sum investing?",
+        answer: "SIP reduces timing risk through rupee cost averaging and is better for regular income earners. Lump sum can potentially give higher returns in rising markets. A combination approach—lump sum when markets dip plus regular SIP—often works best."
+      },
+      {
+        question: "How long should I continue my SIP?",
+        answer: "For wealth creation, 10+ years is ideal to ride out market volatility and benefit from compounding. Short-term SIPs (under 3 years) carry higher risk and are better suited for debt funds."
+      }
+    ],
+    funFacts: [
+      "If you had started a ₹5,000 monthly SIP in the Sensex in 2000, it would be worth over ₹1.2 crore today.",
+      "Warren Buffett recommends index fund SIPs for most individual investors as they outperform most active fund managers.",
+      "India has over 6.5 crore (65 million) active SIP accounts as of 2024.",
+      "The power of compounding means the last 10 years of a 30-year SIP generate more wealth than the first 20 years combined.",
+      "SIP investors who continued investing during the 2008 financial crisis saw some of the best returns over the next decade."
+    ]
+  },
+  gst: {
+    howToUse: [
+      "Select whether you want to 'Add GST' to a price or 'Remove GST' from a price.",
+      "Enter the amount in the input field.",
+      "Select the applicable GST rate (5%, 12%, 18%, or 28%).",
+      "View the calculated GST amount with CGST and SGST breakdown.",
+      "Use Reset to clear and start a new calculation."
+    ],
+    about: "GST (Goods and Services Tax) is India's unified indirect tax that replaced multiple cascading taxes like VAT, excise duty, and service tax on July 1, 2017. Our GST calculator helps businesses and consumers quickly compute the tax amount on goods and services. Understanding GST is essential for pricing, invoicing, and financial planning. The calculator shows both the total GST and its split into CGST (Central GST) and SGST (State GST) for intra-state transactions, or IGST for inter-state sales. This transparency helps ensure accurate billing and compliance with tax regulations.",
+    history: "India's GST journey began in 2000 when a committee was set up to design the new tax model. The Constitution was amended in 2016 (101st Amendment) to enable GST. After years of deliberation, GST was launched on July 1, 2017, in a midnight session of Parliament—the first tax launch since Independence. It unified 17 central and state taxes into one, creating 'One Nation, One Tax.' The GST Council, with representatives from all states, decides tax rates. Initially, there were concerns about complexity, but the system has simplified over time with technology like the GSTN portal and e-invoicing.",
+    formula: "GST calculation formulas: To Add GST: GST Amount = (Original Price × GST Rate) / 100; Total Price = Original Price + GST Amount. To Remove GST: Original Price = (Price with GST × 100) / (100 + GST Rate); GST Amount = Price with GST - Original Price. For intra-state sales: CGST = GST Amount / 2; SGST = GST Amount / 2. For inter-state sales: IGST = GST Amount. Example: Adding 18% GST to ₹1,000: GST = ₹180 (CGST = ₹90, SGST = ₹90), Total = ₹1,180.",
+    faqs: [
+      {
+        question: "What are the different GST rates in India?",
+        answer: "India has four main GST slabs: 5% (essential items), 12% (standard goods), 18% (most services and goods), and 28% (luxury and sin goods). Some items like fresh food and petroleum are exempt or outside GST."
+      },
+      {
+        question: "What is the difference between CGST, SGST, and IGST?",
+        answer: "CGST (Central) and SGST (State) apply equally to intra-state sales, splitting the GST between central and state governments. IGST applies to inter-state sales and imports, going entirely to the central government initially."
+      },
+      {
+        question: "Do I need to charge GST if my turnover is low?",
+        answer: "Registration is mandatory if annual turnover exceeds ₹40 lakh (₹20 lakh for services/special states). Below this threshold, registration is optional but may be beneficial for claiming input tax credit."
+      },
+      {
+        question: "What is Input Tax Credit (ITC)?",
+        answer: "ITC allows businesses to reduce their GST liability by claiming credit for GST paid on purchases/inputs. This prevents tax cascading and is a key benefit of the GST system."
+      },
+      {
+        question: "How do I determine the GST rate for a product?",
+        answer: "Each product has an HSN (Harmonized System of Nomenclature) code that determines its GST rate. You can search the official GST portal or consult the HSN code list for the correct classification."
+      }
+    ],
+    funFacts: [
+      "India's GST is one of the most complex in the world with 4 rate slabs, while many countries have a single rate.",
+      "Over 1.4 crore businesses are registered under GST in India.",
+      "France was the first country to implement GST (called VAT) in 1954.",
+      "The GST Network processes over 800 million invoices per month in India.",
+      "India's GST collections crossed ₹1.5 lakh crore monthly in 2023, showing strong economic activity."
+    ]
+  },
+  compound: {
+    howToUse: [
+      "Enter the principal amount (initial investment).",
+      "Input the annual interest rate as a percentage.",
+      "Specify the time period in years.",
+      "Select the compounding frequency (annually, semi-annually, quarterly, monthly, or daily).",
+      "Click 'Calculate' to see your compound interest, total amount, and comparison with simple interest."
+    ],
+    about: "A compound interest calculator demonstrates the power of earning 'interest on interest.' Unlike simple interest which only earns on the principal, compound interest grows exponentially as each interest payment becomes part of the new principal. This principle is fundamental to wealth building and is why Albert Einstein allegedly called it 'the eighth wonder of the world.' Our calculator shows not just the final amount, but also compares it with simple interest so you can see exactly how much extra you earn through compounding. Understanding compound interest is crucial for making informed decisions about savings, investments, and loans.",
+    history: "Compound interest has ancient origins. Babylonian tablets from 2000 BCE show compound interest calculations. In medieval Italy, merchants developed sophisticated compound interest tables. The mathematical formula was formalized by Jacob Bernoulli in 1683 while studying the problem of continuous compounding, which led to the discovery of the mathematical constant 'e' (approximately 2.71828). Richard Price, an 18th-century Welsh philosopher, demonstrated compound interest's power with his 'penny doubled daily' example. Benjamin Franklin used compound interest in his famous bequest—leaving £1,000 each to Boston and Philadelphia in 1790, stipulating it compound for 200 years. By 1990, the funds had grown to millions.",
+    formula: "Compound Interest Formula: A = P(1 + r/n)^(nt), where: A = Final amount, P = Principal (initial investment), r = Annual interest rate (decimal), n = Compounding frequency per year, t = Time in years. Compound Interest = A - P. For continuous compounding: A = Pe^(rt). Simple Interest (for comparison): SI = P × r × t. Example: ₹100,000 at 8% for 5 years, compounded monthly: A = 100000(1 + 0.08/12)^(12×5) = ₹148,985. Compound Interest = ₹48,985. Simple Interest would be only ₹40,000.",
+    faqs: [
+      {
+        question: "How often should interest compound for best returns?",
+        answer: "More frequent compounding yields higher returns. Daily compounding beats monthly, which beats annually. However, the difference decreases as frequency increases—the jump from annual to monthly is significant, but monthly to daily is marginal."
+      },
+      {
+        question: "What is the Rule of 72?",
+        answer: "The Rule of 72 is a quick way to estimate how long it takes to double your money. Divide 72 by the interest rate: at 8% interest, money doubles in approximately 72/8 = 9 years."
+      },
+      {
+        question: "Does compound interest work against me with loans?",
+        answer: "Yes, the same principle that grows savings also grows debt. Credit card debt and unpaid loan interest compound, causing balances to grow rapidly. This is why paying off high-interest debt should be a priority."
+      },
+      {
+        question: "What's the difference between APR and APY?",
+        answer: "APR (Annual Percentage Rate) is the simple interest rate. APY (Annual Percentage Yield) includes compounding and shows the actual return/cost. A 10% APR compounded monthly equals 10.47% APY."
+      },
+      {
+        question: "Why does early investing matter so much?",
+        answer: "Time is the most powerful factor in compounding. Starting 10 years earlier can result in 2-3x more wealth even with the same contributions, because those early contributions have more time to compound."
+      }
+    ],
+    funFacts: [
+      "If you invested ₹1 at 5% compound interest when the Pyramids were built (4,500 years ago), it would be worth more than the entire world's GDP today.",
+      "Warren Buffett made 99% of his wealth after turning 50, thanks to compound interest.",
+      "The Manhattan island, allegedly purchased for $24 in 1626, would be worth over $1 trillion today if invested at 6.5% compound interest.",
+      "Credit card companies rely on compound interest—a ₹10,000 balance at 18% interest can double in just 4 years if only minimum payments are made.",
+      "Einstein's quote about compound interest being the eighth wonder of the world is likely apocryphal, but the sentiment is mathematically accurate."
+    ]
+  },
+  calorie: {
+    howToUse: [
+      "Enter your age in years.",
+      "Select your gender (male or female).",
+      "Enter your weight in kilograms.",
+      "Enter your height in centimeters.",
+      "Select your activity level from the dropdown menu.",
+      "Click 'Calculate Calories' to see your daily calorie requirements for maintenance, weight loss, and weight gain."
+    ],
+    about: "A calorie calculator estimates your daily energy expenditure and helps you understand how many calories you need to maintain, lose, or gain weight. Our calculator uses the Mifflin-St Jeor equation, which research has shown to be the most accurate for estimating Basal Metabolic Rate (BMR)—the calories your body burns at complete rest. By factoring in your activity level, we calculate your Total Daily Energy Expenditure (TDEE). Understanding your calorie needs is fundamental for achieving fitness goals, whether you're trying to build muscle, lose fat, or maintain a healthy weight.",
+    history: "The concept of calories as energy measurement originated with Nicolas Clément in 1824. Wilbur Olin Atwater, an American chemist, established the caloric values of food in the late 1800s through bomb calorimetry experiments. The first BMR equation was created by James Arthur Harris and Francis Gano Benedict in 1918 (the Harris-Benedict equation). For decades, this was the gold standard until Mifflin and St Jeor published a more accurate formula in 1990. The modern understanding of metabolism and the relationship between calories, exercise, and body composition has evolved significantly with research into hormones, gut microbiome, and individual metabolic variations.",
+    formula: "Mifflin-St Jeor Equation: Men: BMR = 10 × weight(kg) + 6.25 × height(cm) - 5 × age(years) + 5. Women: BMR = 10 × weight(kg) + 6.25 × height(cm) - 5 × age(years) - 161. Activity Multipliers: Sedentary (little/no exercise): BMR × 1.2, Lightly active (1-3 days/week): BMR × 1.375, Moderately active (3-5 days/week): BMR × 1.55, Very active (6-7 days/week): BMR × 1.725, Extra active (very hard exercise): BMR × 1.9. Weight change: Lose weight = TDEE - 500 cal/day (≈0.5 kg/week loss), Gain weight = TDEE + 500 cal/day.",
+    faqs: [
+      {
+        question: "How accurate is this calorie calculator?",
+        answer: "The Mifflin-St Jeor equation is accurate to within 10% for most people. Individual factors like genetics, body composition, hormones, and metabolism can cause variations. Use the result as a starting point and adjust based on real-world results."
+      },
+      {
+        question: "What is BMR vs TDEE?",
+        answer: "BMR (Basal Metabolic Rate) is calories burned at complete rest—just keeping your body alive. TDEE (Total Daily Energy Expenditure) includes BMR plus calories burned through activity. TDEE is what you should use for diet planning."
+      },
+      {
+        question: "Why is there a 500 calorie deficit for weight loss?",
+        answer: "A 500 calorie daily deficit creates a weekly deficit of 3,500 calories, which approximately equals 0.5 kg (1 pound) of fat. This rate is considered safe and sustainable. Larger deficits can lead to muscle loss and metabolic adaptation."
+      },
+      {
+        question: "Does muscle really burn more calories than fat?",
+        answer: "Yes, but the difference is modest. Muscle burns about 6-7 calories per pound per day at rest, while fat burns about 2-3 calories. However, building muscle improves insulin sensitivity and overall metabolic health beyond just calorie burning."
+      },
+      {
+        question: "Why do calorie needs decrease with age?",
+        answer: "Metabolism slows with age due to loss of muscle mass, hormonal changes, and decreased cellular activity. After 30, BMR decreases by about 1-2% per decade. Regular strength training can help minimize this decline."
+      }
+    ],
+    funFacts: [
+      "Your brain uses about 20% of your daily calories despite being only 2% of your body weight.",
+      "Fidgeting can burn up to 350 extra calories per day—a phenomenon called NEAT (Non-Exercise Activity Thermogenesis).",
+      "The average person burns about 1 calorie per minute at rest, increasing to 4-6 during walking and 8-12 during running.",
+      "Cold exposure can increase calorie burn by activating brown fat, which generates heat. This is called cold-induced thermogenesis.",
+      "Michael Phelps reportedly consumed 12,000 calories daily during Olympic training—about 5x the average person's needs."
+    ]
   }
 };
