@@ -2,7 +2,6 @@ import { Layout } from "@/components/layout/Layout";
 import { AgeCalculator } from "@/components/calculators/AgeCalculator";
 import { Link } from "react-router-dom";
 import { Calculator, Heart, Percent, ArrowRight, DollarSign, Receipt, Tag, ArrowLeftRight } from "lucide-react";
-import { AdBannerTop, AdBannerInContent, AdBannerBottom } from "@/components/ads/AdBanner";
 
 const otherCalculators = [
   {
@@ -52,9 +51,6 @@ const otherCalculators = [
 const Index = () => {
   return (
     <Layout>
-      {/* Top Ad Banner */}
-      <AdBannerTop />
-
       {/* Hero Section with Age Calculator */}
       <section className="relative overflow-hidden gradient-hero py-12 md:py-20">
         <div className="absolute inset-0 opacity-10">
@@ -78,11 +74,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* In-Content Ad */}
-      <div className="container">
-        <AdBannerInContent />
-      </div>
 
       {/* Other Calculators Section */}
       <section className="py-16 md:py-20">
@@ -141,9 +132,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Bottom Ad Banner */}
-      <AdBannerBottom />
     </Layout>
   );
 };
