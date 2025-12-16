@@ -7,7 +7,6 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { Lightbulb, BookOpen, History, Calculator, HelpCircle } from "lucide-react";
 import { CalculatorContentData } from "@/data/calculatorContent";
-import { AdBannerInContent } from "@/components/ads/AdBanner";
 
 interface CalculatorContentProps {
   content: CalculatorContentData;
@@ -47,9 +46,6 @@ export function CalculatorContent({ content, calculatorName }: CalculatorContent
         </h2>
         <p className="text-muted-foreground leading-relaxed">{content.about}</p>
       </section>
-
-      {/* Ad Placement */}
-      <AdBannerInContent className="my-8" />
 
       {/* History Section */}
       <section>
@@ -93,9 +89,6 @@ export function CalculatorContent({ content, calculatorName }: CalculatorContent
           ))}
         </Accordion>
       </section>
-
-      {/* Ad Placement */}
-      <AdBannerInContent className="my-8" />
 
       {/* Fun Facts Section */}
       <section>

@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Share2, Bookmark } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-import { AdBannerInContent, AdBannerSidebar } from "@/components/ads/AdBanner";
 import { CalculatorContent } from "./CalculatorContent";
 import { CalculatorContentData } from "@/data/calculatorContent";
 
@@ -51,9 +50,8 @@ export function CalculatorLayout({
         <span className="text-foreground">{title}</span>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8">
+      <div>
         {/* Main Content */}
-        <div>
           {/* Header */}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
             <div>
@@ -75,9 +73,6 @@ export function CalculatorLayout({
           {/* Calculator */}
           <div className="mb-8">{children}</div>
 
-          {/* In-Content Ad */}
-          <AdBannerInContent className="my-8" />
-
           {/* Educational Content */}
           {content && (
             <CalculatorContent content={content} calculatorName={title} />
@@ -91,14 +86,6 @@ export function CalculatorLayout({
             <ArrowLeft className="h-4 w-4" />
             Back to {category}
           </Link>
-        </div>
-
-        {/* Sidebar with Ad */}
-        <aside className="hidden lg:block">
-          <div className="sticky top-24">
-            <AdBannerSidebar />
-          </div>
-        </aside>
       </div>
     </div>
   );
