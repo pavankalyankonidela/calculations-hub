@@ -4,13 +4,18 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 const navLinks = [
-  { name: "Age Calculator", href: "/" },
-  { name: "Basic", href: "/calculator/basic" },
+  { name: "Age", href: "/" },
   { name: "BMI", href: "/calculator/bmi" },
-  { name: "Loan EMI", href: "/calculator/loan-emi" },
+  { name: "EMI", href: "/calculator/loan-emi" },
+  { name: "SIP", href: "/calculator/sip" },
+  { name: "GST", href: "/calculator/gst" },
+  { name: "Compound Interest", href: "/calculator/compound-interest" },
+  { name: "Calorie", href: "/calculator/calorie" },
+  { name: "Percentage", href: "/calculator/percentage" },
   { name: "Tip", href: "/calculator/tip" },
   { name: "Discount", href: "/calculator/discount" },
   { name: "Unit Converter", href: "/calculator/unit-converter" },
+  { name: "Basic", href: "/calculator/basic" },
 ];
 
 export function Header() {
@@ -23,16 +28,16 @@ export function Header() {
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground transition-transform group-hover:scale-105">
             <Calculator className="h-5 w-5" />
           </div>
-          <span className="text-xl font-bold text-foreground">CalcHub</span>
+          <span className="text-xl font-bold text-foreground hidden sm:block">Calculatorss</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1 flex-wrap">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.href}
-              className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-accent"
+              className="px-2 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-accent"
             >
               {link.name}
             </Link>
@@ -53,7 +58,7 @@ export function Header() {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="lg:hidden border-t border-border bg-card animate-fade-in">
-          <nav className="container py-4 flex flex-col gap-2">
+          <nav className="container py-4 grid grid-cols-2 gap-2">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
