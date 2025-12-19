@@ -21,6 +21,7 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsPage from "./pages/TermsPage";
+import AuthPage from "./pages/AuthPage";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/auth" element={<AuthPage />} />
           <Route path="/calculator/basic" element={<BasicCalculatorPage />} />
           <Route path="/calculator/bmi" element={<BMICalculatorPage />} />
           <Route path="/calculator/percentage" element={<PercentageCalculatorPage />} />
