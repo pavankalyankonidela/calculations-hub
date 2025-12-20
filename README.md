@@ -1,73 +1,125 @@
-# Welcome to your Lovable project
+# Calculatorss.online
 
-## Project info
+A free online calculator application with 12+ calculators for finance, health, math, and utility calculations.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🏗️ Project Structure (AWS-Ready)
+
+This project is organized for easy migration to AWS infrastructure:
+
+```
+├── src/                          # FRONTEND - React Application
+│   ├── components/               # Reusable UI components
+│   │   ├── calculators/          # Calculator-specific components
+│   │   ├── layout/               # Layout components (Header, Footer)
+│   │   ├── home/                 # Homepage sections
+│   │   └── ui/                   # shadcn/ui base components
+│   ├── pages/                    # Route page components
+│   │   └── calculators/          # Individual calculator pages
+│   ├── hooks/                    # Custom React hooks
+│   ├── lib/                      # Utility functions
+│   ├── data/                     # Static data and content
+│   ├── integrations/             # External service integrations
+│   │   └── supabase/             # Database client (auto-generated)
+│   ├── App.tsx                   # Main application with routing
+│   ├── main.tsx                  # Application entry point
+│   └── index.css                 # Global styles and design tokens
+│
+├── supabase/                     # BACKEND - Serverless Functions
+│   ├── functions/                # Edge Functions (serverless API)
+│   │   └── [function-name]/      # Each function in its own folder
+│   └── config.toml               # Supabase configuration
+│
+├── database/                     # DATABASE - Schema & Migrations
+│   └── README.md                 # Database documentation
+│
+├── public/                       # Static assets
+├── index.html                    # HTML entry point
+├── vite.config.ts                # Vite bundler configuration
+├── tailwind.config.ts            # Tailwind CSS configuration
+└── package.json                  # Dependencies and scripts
+```
+
+## 🚀 AWS Migration Guide
+
+When migrating to AWS, consider the following architecture:
+
+### Frontend (S3 + CloudFront)
+- Build with `npm run build`
+- Deploy `dist/` folder to S3
+- Use CloudFront for CDN and HTTPS
+
+### Backend (Lambda + API Gateway)
+- Convert `supabase/functions/` to AWS Lambda functions
+- Use API Gateway for HTTP endpoints
+- Consider Lambda@Edge for edge computing
+
+### Database (RDS/Aurora PostgreSQL)
+- Export schema from current PostgreSQL database
+- Apply migrations to RDS/Aurora instance
+- Update connection strings in Lambda functions
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React 18, TypeScript, Vite, Tailwind CSS
+- **UI Components**: shadcn/ui, Radix UI primitives
+- **State Management**: TanStack Query (React Query)
+- **Routing**: React Router v6
+- **Backend**: Supabase Edge Functions (Deno)
+- **Database**: PostgreSQL (via Lovable Cloud)
+- **Authentication**: Supabase Auth
+
+## 📦 Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## 📁 Key Directories
+
+| Directory | Purpose | AWS Equivalent |
+|-----------|---------|----------------|
+| `src/` | React frontend application | S3 + CloudFront |
+| `supabase/functions/` | Serverless API functions | Lambda + API Gateway |
+| `database/` | Database schema & migrations | RDS/Aurora PostgreSQL |
+
+## 🔐 Environment Variables
+
+Required environment variables for production:
+
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_PUBLISHABLE_KEY=your_anon_key
+```
+
+For AWS migration, additional variables may be needed:
+```env
+DATABASE_URL=postgresql://...
+AWS_REGION=us-east-1
+```
+
+---
 
 ## How can I edit this code?
 
-There are several ways of editing your application.
+**Use Lovable**: Visit [Lovable](https://lovable.dev) and start prompting. Changes made via Lovable will be committed automatically.
 
-**Use Lovable**
+**Use your preferred IDE**: Clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Open Lovable and click on Share → Publish. For custom domains, navigate to Project → Settings → Domains.
